@@ -20,8 +20,8 @@ public class UDPReceiver extends Thread {
     public void run() {
 
         String salida = null;
-        //String comando = "cmd /c commands/udp-receiver.exe -f tmp.tar --exit-wait 1000";
-        String comando = "udp-receiver -f tmp.tar --exit-wait 1000";
+        String comando = "cmd /c commands\\udp-receiver.exe -f tmp.tar --exit-wait 1000";
+        //String comando = "udp-receiver -f tmp.tar --exit-wait 1000";
 
         try {
             while (true) {
@@ -40,7 +40,7 @@ public class UDPReceiver extends Thread {
                 } else {
                     // Descomprimimos archivo
                     sleep(5000);
-                    unTar("tmp.tar", "/home/dapelle");
+                    unTar("tmp.tar", "C:\\Users\\Public\\Desktop\\Multicast");
                     sleep(3000);
                     System.out.println("Esperando siguiente archivo...");
                 }
@@ -56,8 +56,8 @@ public class UDPReceiver extends Thread {
     private void unTar(String tarFile, String destFolder) {
         try {
             String salida = null;
-            //String comando = "cmd /c commands/tar.exe -xf tmp.tar";
-            String comando = "tar -xf tmp.tar";
+            String comando = "cmd /c commands\\tar.exe -xf tmp.tar " + destFolder ;
+            //String comando = "tar -xf tmp.tar";
             Process proceso = Runtime.getRuntime().exec(comando);
             
             InputStreamReader entrada = new InputStreamReader(proceso.getInputStream());
