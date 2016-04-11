@@ -15,11 +15,12 @@ import org.xeustechnologies.jtar.*;
  * @author dapelle
  */
 public class UDPReceiver extends Thread {
-
+     
+    
     @Override
     public void run() {
 
-        String salida = null;
+        String salida = null;        
         String comando = "cmd /c commands\\udp-receiver.exe -f tmp.tar --exit-wait 1000";
         //String comando = "udp-receiver -f tmp.tar --exit-wait 1000";
 
@@ -40,7 +41,7 @@ public class UDPReceiver extends Thread {
                 } else {
                     // Descomprimimos archivo
                     sleep(5000);
-                    unTar("tmp.tar", "C:\\Users\\Public\\Desktop\\Multicast");
+                    unTar("tmp.tar", "");
                     sleep(3000);
                     System.out.println("Esperando siguiente archivo...");
                 }
@@ -56,7 +57,7 @@ public class UDPReceiver extends Thread {
     private void unTar(String tarFile, String destFolder) {
         try {
             String salida = null;
-            String comando = "cmd /c commands\\tar.exe -xf tmp.tar " + destFolder ;
+            String comando = "cmd /c commands\\tar.exe -xf tmp.tar --directory=Multicast";
             //String comando = "tar -xf tmp.tar";
             Process proceso = Runtime.getRuntime().exec(comando);
             
@@ -77,4 +78,6 @@ public class UDPReceiver extends Thread {
             Logger.getLogger(UDPReceiver.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+
+    
 }

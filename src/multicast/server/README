@@ -1,2 +1,4 @@
-- Falta comprobar que descomprime bien es lo único solo en Server en client funciona bien
-- Comprobar si la aplicación funciona solo con tar.exe y las dll que estan en commands
+- Funciona correctamente aunque es necesario incluir carpeta Multicast en server
+- Por tanto necesario que se haga acceso directo al escritorio de esa carpeta
+- Sale multiples veces "Archivo enviado aunque sólo ha enviado uno"
+- Subido a github empaquetar y probar en varios equipos
