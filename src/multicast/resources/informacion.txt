@@ -1,0 +1,6 @@
+Multicast File transfer versión Cliente es una aplicación que te permitirá la 
+transferencia de archivos en modo multicast para distintos equipos, enviando 
+dichos ficheros en el mismo tiempo que tardaría en envio a un único equipo.
+
+En esta versión cliente, se podrá seleccionar todos aquellos directorios, estén
+donde estén: particiones, usb, discos extraibles etc.
